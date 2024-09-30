@@ -62,7 +62,12 @@
 
   <% @active_posts.each do |a_post| %>
     <tr>
-      <td><%= a_post.title %></td>
+      <td>
+        <%= a_post.title %>
+        <% if a_post.user == current_user %>
+          <a href="/delete_post/<%= a_post.id %>">Delete post</a>
+        <% end %>
+      </td>
       <td><%= a_post.body %></td>
       <td><%= a_post.user.email %></td>
       <td><%= a_post.created_at.strftime("%b %e, %Y") %></td>
@@ -84,7 +89,12 @@
 
   <% @expired_posts.each do |a_post| %>
     <tr>
-      <td><%= a_post.title %></td>
+      <td>
+        <%= a_post.title %>
+        <% if a_post.user == current_user %>
+          <a href="/delete_post/<%= a_post.id %>">Delete post</a>
+        <% end %>
+      </td>
       <td><%= a_post.body %></td>
       <td><%= a_post.user.email %></td>
       <td><%= a_post.created_at.strftime("%b %e, %Y") %></td>
