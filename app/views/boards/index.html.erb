@@ -43,6 +43,7 @@
       <a href="/boards/<%= a_board.id %>">
         <%= a_board.name %>
       </a>
+      <div>Owner: <%= a_board.user.email %></div>
     </li>
     <hr>
   <% end %>
