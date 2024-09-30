@@ -21,7 +21,7 @@ task({ :sample_data => :environment }) do
   5.times do
     board = Board.new
     board.name = Faker::Address.community
-    # board.user_id = rand
+    board.user_id = User.all.sample.id
     board.save
 
     rand(10..50).times do
@@ -31,6 +31,7 @@ task({ :sample_data => :environment }) do
       post.body = Faker::Lorem.paragraphs(number: rand(1..5), supplemental: true).join("\n\n")
       post.created_at = Faker::Date.backward(days: 120)
       post.expires_on = post.created_at + rand(3..90).days
+      post.user_id = User.all.sample.id
       post.save
     end
   end
