@@ -39,8 +39,10 @@
 
       <input type="date" id="expires_on_box" name="query_expires_on">
     </div>
-
+    <label for="board_id_box">Board</label>
     <input type="hidden" id="board_id_box" name="query_board_id" value="<%= @the_board.id %>">
+    <label for="user_id_box">
+    <input type="hidden" id="user_id_box" name="query_user_id" value="<%= current_user.id %>">
 
     <button>
       Add post

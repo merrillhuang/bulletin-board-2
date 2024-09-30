@@ -40,11 +40,10 @@
       </div>
 
       <div>
-        <label for="board_id_box">
-          Board
-        </label>
-
+        <label for="board_id_box">Board</label
         <input type="text" id="board_id_box" name="query_board_id">
+        <label for="user_id_box">
+        <input type="hidden" id="user_id_box" name="query_user_id" value="<%= current_user.id %>">
       </div>
 
       <button>

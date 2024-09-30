@@ -12,6 +12,7 @@ task({ :sample_data => :environment }) do
   5.times do
     board = Board.new
     board.name = Faker::Address.community
+    # board.user_id = rand
     board.save
 
     rand(10..50).times do
